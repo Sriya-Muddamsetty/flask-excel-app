@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Path to the Excel file
-EXCEL_FILE = r"D:\flask_excel_app\data.xlsx"  # Use raw string for file path to avoid escape characters
+EXCEL_FILE = r"data.xlsx"  # Use raw string for file path to avoid escape characters
 
 # Create an empty Excel file if it doesn't exist
 if not os.path.exists(EXCEL_FILE):
