@@ -1,17 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Column</title>
+    <style>
+        body {
+            background-color: #fdf5e6;
+            font-family: 'Courier New', Courier, monospace;
+            color: #4b3621;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #f4ecd8;
+            border: 2px solid #4b3621;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        h1 {
+            font-family: 'Pirata One', cursive;
+            font-size: 2rem;
+            text-align: center;
+            color: #3a2405;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 2px solid #4b3621;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        button {
+            display: block;
+            width: 100%;
+            background-color: #a67c52;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px;
+            border: 2px solid #4b3621;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #865e3b;
+        }
+        button:active {
+            background-color: #654321;
+        }
+        a {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            color: #3a2405;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Add New Column</h1>
-    <form method="POST">
-        <label for="column_name">Column Name:</label>
-        <input type="text" id="column_name" name="column_name" required>
-        <button type="submit">Add Column</button>
-    </form>
-    <a href="{{ url_for('index') }}">Back to Home</a>
+    <div class="container">
+        <h1>Add New Column</h1>
+        <form method="POST">
+            <label for="column_name">Column Name:</label>
+            <input type="text" id="column_name" name="column_name" required>
+            <button type="submit">Add Column</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
 </body>
 </html>

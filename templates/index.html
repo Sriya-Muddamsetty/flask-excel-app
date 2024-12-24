@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Management App</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fdf5e6;
+            font-family: 'Courier New', Courier, monospace;
+            color: #4b3621;
+        }
+        .container {
+            background: #f4ecd8;
+            border: 2px solid #4b3621;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        h2 {
+            font-family: 'Pirata One', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #3a2405;
+        }
+        .btn {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #a67c52;
+            color: #fff;
+            border: 2px solid #4b3621;
+            margin-bottom: 10px;
+        }
+        .btn:hover {
+            background-color: #865e3b;
+            color: #fdf5e6;
+        }
+        .btn:active {
+            background-color: #654321;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-4">
         <h2>Excel Management Application</h2>
-        <ul class="list-unstyled">
-            <li><a href="{{ url_for('add_column') }}">Add Column</a></li>
-            <li><a href="{{ url_for('add_data') }}">Add Data</a></li>
-            <li><a href="{{ url_for('update_data') }}">Update Data</a></li>
-            <li><a href="{{ url_for('show_data') }}">Show Data</a></li>
-            <li><a href="{{ url_for('delete_data') }}">Delete Data</a></li>
-            <li><a href="{{ url_for('delete_column') }}">Delete Column</a></li>
-        </ul>
+        <div class="mt-4">
+            <a href="{{ url_for('add_column') }}" class="btn btn-block">Add Column</a>
+            <a href="{{ url_for('add_data') }}" class="btn btn-block">Add Data</a>
+            <a href="{{ url_for('update_data') }}" class="btn btn-block">Update Data</a>
+            <a href="{{ url_for('show_data') }}" class="btn btn-block">Show Data</a>
+            <a href="{{ url_for('delete_data') }}" class="btn btn-block">Delete Data</a>
+            <a href="{{ url_for('delete_column') }}" class="btn btn-block">Delete Column</a>
+        </div>
     </div>
 </body>
 </html>

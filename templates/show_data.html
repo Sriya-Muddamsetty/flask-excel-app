@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Data</title>
-    <!-- Add Bootstrap for table styling -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fdf5e6;
+            font-family: 'Courier New', Courier, monospace;
+            color: #4b3621;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #f4ecd8;
+            border: 2px solid #4b3621;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        h2, h3 {
+            font-family: 'Pirata One', cursive;
+            text-align: center;
+            color: #3a2405;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
+            border: 2px solid #4b3621;
+            border-radius: 4px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #a67c52;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px;
+            border: 2px solid #4b3621;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #865e3b;
+        }
+        .btn:active {
+            background-color: #654321;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+        }
+        table, th, td {
+            border: 2px solid #4b3621;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #a67c52;
+            color: #fff;
+		}
+		a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #4b3621;
+            text-decoration: none;
+            font-weight: bold;
+		}
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,9 +97,8 @@
             <label for="end_row">End Row:</label>
             <input type="number" class="form-control" id="end_row" name="end_row" required>
         </div>
-        <button type="submit" class="btn btn-primary">Show Data</button>
+        <button type="submit" class="btn">Show Data</button>
     </form>
-
     <hr>
 
     <!-- Display Data Table -->
@@ -32,7 +106,9 @@
     <div>
         <!-- Displaying the DataFrame as an HTML table -->
         {{ data | safe }}
+		<center><a href="{{ url_for('index') }}">Back to Home</a><center>
     </div>
+	
 </div>
 
 </body>
