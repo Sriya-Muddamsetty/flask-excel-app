@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data</title>
+</head>
+<body>
+    <h1>Update Data</h1>
+    <form method="POST">
+        <label for="row_id">Select Row ID:</label>
+        <select name="row_id" id="row_id">
+            {% for row in rows %}
+                <option value="{{ row }}">{{ row }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="column_name">Select Column to Update:</label>
+        <select name="column_name" id="column_name">
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="new_value">New Value:</label>
+        <input type="text" id="new_value" name="new_value" required>
+        <br>
+        <button type="submit">Update Data</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

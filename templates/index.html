@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Management App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Excel Management Application</h2>
+        <ul class="list-unstyled">
+            <li><a href="{{ url_for('add_column') }}">Add Column</a></li>
+            <li><a href="{{ url_for('add_data') }}">Add Data</a></li>
+            <li><a href="{{ url_for('update_data') }}">Update Data</a></li>
+            <li><a href="{{ url_for('show_data') }}">Show Data</a></li>
+            <li><a href="{{ url_for('delete_data') }}">Delete Data</a></li>
+            <li><a href="{{ url_for('delete_column') }}">Delete Column</a></li>
+        </ul>
+    </div>
+</body>
+</html>

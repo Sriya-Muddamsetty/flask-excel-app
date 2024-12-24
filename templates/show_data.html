@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <!-- Add Bootstrap for table styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h2>Data in Excel</h2>
+
+    <!-- Form to filter rows by start and end -->
+    <form method="POST" action="{{ url_for('show_data') }}">
+        <div class="form-group">
+            <label for="start_row">Start Row:</label>
+            <input type="number" class="form-control" id="start_row" name="start_row" required>
+        </div>
+        <div class="form-group">
+            <label for="end_row">End Row:</label>
+            <input type="number" class="form-control" id="end_row" name="end_row" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Show Data</button>
+    </form>
+
+    <hr>
+
+    <!-- Display Data Table -->
+    <h3>Table of Data</h3>
+    <div>
+        <!-- Displaying the DataFrame as an HTML table -->
+        {{ data | safe }}
+    </div>
+</div>
+
+</body>
+</html>
